@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Responsive landing page coffee 3D</title>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Coffee</a>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                        <div id="about" style="display: none; overflow-y: auto; max-height: 30vh;">
+                            <p>coffee</p>
+                            <p>
+                                Taste is a very subjective thing so one person's idea of a delicious tasting coffee may be very different from another's. Finding a coffee that you prefer can take a little work and you may need to understand a little bit of industry jargon, and a little of how coffee is processed to become confident in choosing coffee you'll really enjoy.
+                            </p>
+                            <p>
+                                Find your preferred coffee species
+                                We usually distinguish between two main types of coffee beans:
+                            </p>
+                            <p>
+                                Coffea Arabica: Makes up 75-80 percent of all coffee. Has a mild, fresh and pleasantly acidic taste. Arabica is used in most specialty coffees due to its reputation for more nuanced flavour profiles.<br>
+                                Coffea Robusta: Makes up 20-25 percent of all coffee. Robusta is characterised by a rich, punchy taste. Sometimes robusta cane be chocolatey and is often bitter. It is used mainly in instant coffee or espresso blends and is considered a less exclusive coffee than Arabica.
+                            </p>
+                            <p>
+                                In general, one can say that coffee from East Africa is often fruity, intense and has a lot of freshness and acidity. Coffee from India and Brazil is often more rustic with flavours of nuts and chocolate, while coffee from Colombia and Central America is often sweet with a little freshness and fruitiness.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="nav__item">
+                        <a href="https://coffeeaffection.com/" class="nav__link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                        <div id="contact" style="display: none; overflow-y: auto; max-height: 30vh;">
+                            <p>Contact</p>
+                            <p>123-456-7890</p>
+                            <p>hello@reallygreatsite.com</p>
+                            <p>123 Anywhere St, Any City</p>
+                            <p><a href="http://www.reallygreatsite.com" target="_blank">www.reallygreatsite.com</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+                <div class="home__img">
+                    <img src="assets/img/img1.png" alt="" data-speed="-2" class="move">
+                    <img src="assets/img/img2.png" alt="" data-speed="2" class="move">
+                    <img src="assets/img/img3.png" alt="" data-speed="2" class="move">
+                    <img src="assets/img/img4.png" alt="" data-speed="-2" class="move">
+                    <img src="assets/img/img5.png" alt="" data-speed="-2" class="move">
+                    <img src="assets/img/img6.png" alt="" data-speed="2" class="move">
+                </div>
+
+                <div class="home__data">
+                    <h1 class="home__title">Coffee<br> Drink 3D</h1>
+                    <p class="home__description">Let's help discover the best coffee drink <br> of the week.</p>
+                    <a href="https://balancecoffee.co.uk/blogs/blog/best-coffee-drinks-in-the-world" class="home__button">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--===== GSAP =====-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+
+    <!-- JavaScript for toggling visibility -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav__link').forEach(function(navLink) {
+                navLink.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    var targetId = this.getAttribute('href').substr(1); // Get target id from href attribute
+                    var targetElement = document.getElementById(targetId); // Get target element
+                    if (targetElement) {
+                        targetElement.style.display = (targetElement.style.display === 'none') ? 'block' : 'none'; // Toggle visibility
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
